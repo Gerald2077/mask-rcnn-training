@@ -62,7 +62,7 @@ class CustomConfig(Config):
     Derives from the base Config class and overrides some values.
     """
     # Give the configuration a recognizable name
-    NAME = "damage"
+    NAME = "table"
 
     # We use a GPU with 12GB memory, which can fit two images.
     # Adjust down if you use a smaller GPU.
@@ -90,7 +90,7 @@ class CustomDataset(utils.Dataset):
         subset: Subset to load: train or val
         """
         # Add classes. We have only one class to add.
-        self.add_class("damage", 1, "damage")
+        self.add_class("table", 1, "table")
 
         # Train or validation dataset?
         assert subset in ["train", "val"]
@@ -135,7 +135,7 @@ class CustomDataset(utils.Dataset):
             height, width = image.shape[:2]
 
             self.add_image(
-                "damage",  ## for a single class just add the name here
+                "table",  ## for a single class just add the name here
                 image_id=a['filename'],  # use file name as a unique image id
                 path=image_path,
                 width=width, height=height,
@@ -150,7 +150,7 @@ class CustomDataset(utils.Dataset):
         """
         # If not a balloon dataset image, delegate to parent class.
         image_info = self.image_info[image_id]
-        if image_info["source"] != "damage":
+        if image_info["source"] != "table":
             return super(self.__class__, self).load_mask(image_id)
 
         # Convert polygons to a bitmap mask of shape
@@ -170,7 +170,7 @@ class CustomDataset(utils.Dataset):
     def image_reference(self, image_id):
         """Return the path of the image."""
         info = self.image_info[image_id]
-        if info["source"] == "damage":
+        if info["source"] == "table":
             return info["path"]
         else:
             super(self.__class__, self).image_reference(image_id)
