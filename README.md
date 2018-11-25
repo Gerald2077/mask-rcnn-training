@@ -1,10 +1,19 @@
-# Mask R-CNN for Car Damage Detection
+# Mask R-CNN for Table detection training
 
-This repo uses the Mask RCNN model from Matterport to train a custom model for detection damage on the cars. See example of detection below:
+Steps to prepare jupyter notebook on colab
 
-![alt text](https://github.com/priya-dwivedi/Deep-Learning/blob/master/mask_rcnn_damage_detection/results/combined.jpg)
+* Clone the repo, 
+``` !git clone https://github.com/Gerald2077/mask-rcnn-training ``` 
 
-I have also written a blog that goes into more details on how I trained a custom model. Please see it at the link below:
+* Install mask rcnn using pip 
+``` !pip install mrcnn ```
 
+* ```import sys 
+  sys.path.insert(0, '/mask-rcnn-training')```
 
+* Navigate to the main directory
+``` %cd mask-rcnn-training/ ```
 
+* In custom.py updated class name to table(If not already edited).
+
+# Also replace images and annotation json in customeimages/ train and val folders!
