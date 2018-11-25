@@ -20,7 +20,7 @@ Steps to prepare jupyter notebook on colab
       import sys
       sys.path.insert(0, '/mask-rcnn-training')
       %cd mask-rcnn-training/ 
-      ```
+```
 
 * In custom.py updated class name to table(If not already edited).
 
