@@ -63,3 +63,14 @@ Keep updating the same code block with below lines & repeat individually,
 from google.colab import files
 files.download('mask_rcnn_table_0010.h5') 
 ```
+
+## Saving weight file on google drive and download
+
+* Mounting google drive
+``` 
+from google.colab import drive 
+drive.mount('/content/gdrive') 
+```
+
+* Copy the file to google drive
+``` %cp mask_rcnn_table_0010.h5 /content/gdrive/'My Drive'/ ```
