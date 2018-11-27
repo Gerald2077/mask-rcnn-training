@@ -52,3 +52,14 @@ sys.path.insert(0, '/mask-rcnn-training')
 ```
 
 * After training we will save the generated h5 file to our local machine & use it for inference using CPU. We can also verify the same with another notebook, where we need to upload the h5 file & update the filename in that notebook as well.
+
+* To download the h5 weights file, do the following-
+```
+Keep updating the same code block with below lines & repeat individually,
+%cd ..
+%cd logs/
+%cd {into latest table, check the training log for h5 file name & folder it is enclosed in.}
+#then run the below,
+from google.colab import files
+files.download('mask_rcnn_table_0010.h5') 
+```
